@@ -1,0 +1,58 @@
+
+<div class="login-page" [@list2]>
+    <mat-card class="mat-elevation-z12">
+      <mat-card-title style="text-align:center;">SignIn</mat-card-title>
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+        <mat-tab label="Sign In">
+            <mat-card-content>
+              <form  (ngSubmit)="onSignin(f)" #f="ngForm"  autocomplete="new-password">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="email"
+                    pattern="[^ @]*@[^ @]*"
+                    placeholder="Email"
+                    name="email"
+                    id="email"
+                    ngModel
+                    value="email"
+                    #email="ngModel"
+                    autocomplete="new-password"
+                    required
+                   >
+                    <mat-error *ngIf="email.invalid">Email is required</mat-error>
+                  <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field>
+                <mat-form-field>
+                  <input
+                    matInput
+                    placeholder="Password"
+                    [type]="hide ? 'text' : 'password'" id="password" name="password"
+                    required
+                    minlength="6"
+                    value="password"
+                    ngModel
+                    autocomplete="new-password"
+                    #password="ngModel">
+                    <mat-error
+                      *ngIf="password.errors && password.errors.required">
+                      Password is required
+                    </mat-error>
+                    <mat-error
+                      *ngIf="password.errors && password.errors.minlength">
+                      Password must be of length 6
+                    </mat-error>
+                    <i class="material-icons" style="cursor: pointer;" matSuffix (click)="hide = !hide" >{{hide ? 'visibility' : 'visibility_off'}}</i>
+                </mat-form-field>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  class="login-button">
+                  Sign In
+                </button>
+              </form>
+            </mat-card-content>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>

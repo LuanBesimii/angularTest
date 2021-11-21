@@ -1,0 +1,9 @@
+input.ng-invalid.ng-touched{
+    border: 2px solid red !important;
+}
+label{
+    font-family: cursive ;
+    font-size: 17px !important;
+    font-size: initial;
+    
+}

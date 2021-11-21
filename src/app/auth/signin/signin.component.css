@@ -1,0 +1,130 @@
+
+
+.label {
+    padding: 0% !important;
+    font-size: 15px;
+    color: crimson;
+}
+.form-control{
+    width: 50%;
+    height: 35px;
+    font-size: 15px;
+}
+.form-control:focus{
+    color: #495057;
+    background-color: #fff;
+    border-color: navy;
+    outline: 0;
+    box-shadow: none !important;
+}
+.form-control:disabled{
+    border: 0.75px solid #284054 !important;
+    border-radius: 4px !important;
+    color: #2A4252;
+    margin-bottom: 35px;
+    font-size: 20px;
+    text-align: center;
+}
+.btn {
+    cursor: pointer;
+    font-size: 15px;
+    width: 50%;
+}
+.btn:focus{
+    outline: 0;
+    box-shadow: none !important;
+}
+.btn-success{
+    color: #fff;
+    background-color: #202059;
+    border-color: #202059 !important;
+    margin-top: 20px;
+}
+.btn-success:hover{
+    color: #fff;
+    background: #202059;
+    box-shadow: none ;
+}
+.btn-success:active{
+    color: #fff;
+    background-color: #202059 ;
+}
+.btn-success:focus{
+    color: #fff;
+    background-color: #202059 !important;
+    border-color: none !important;
+    box-shadow: none !important;
+}
+
+.btn-success:not(:disabled):not(.disabled):active{
+    color: #ffffff;
+    background-color: #202059 ;
+}
+.header{
+    padding: 1em;
+    font-size: 25px;
+    color: #2A4252;
+
+}
+
+.row{
+    margin-left: 15em;
+}
+
+.login-page {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  mat-card {
+    width: 30%;
+    margin: 10% auto;
+    border-radius: 8px;
+  }
+  mat-form-field, mat-checkbox {
+    width: 80%;
+    display: block;
+    margin: auto;
+  }
+  mat-card-content {
+    margin-top: 20px;
+  }
+
+  .login-button {
+    margin-top: 20px;
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+  }
+  @media only screen and (max-width: 992px) and (min-width:700px) {
+    mat-card {
+        width: 40%;
+        margin: 10% auto;
+        border-radius: 8px;
+      }
+  }
+  @media only screen and (max-width: 700px) and (min-width:470px) {
+    mat-card {
+        width: 50%;
+        margin: 10% auto;
+        border-radius: 8px;
+      }
+  }
+  @media only screen and (max-width: 469px) {
+    mat-card {
+        width: 90%;
+        margin: 10% auto;
+        border-radius: 8px;
+      }
+  }
+  ::ng-deep .mat-tab-header-pagination {
+    display: none !important;
+}

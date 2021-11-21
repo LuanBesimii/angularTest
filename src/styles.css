@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+::ng-deep .mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: none !important;
+    /* width: 180px; */
+}
+mat-form-field:last-child div {
+    width: 0% !important;
+ }
+    .formFieldWidth480 .mat-form-field-infix {
+        width: 0px !important;
+     }

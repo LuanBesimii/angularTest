@@ -1,0 +1,75 @@
+<div class="login-page" [@list2]>
+<mat-card class="mat-elevation-z12">
+    <mat-card-title style="text-align:center;">SignUp</mat-card-title>
+    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+      <mat-tab label="Sign Up" >
+        <mat-card-content>
+          <form (ngSubmit)="onSignup(f)" #f="ngForm" action="" autocomplete="false" >
+            <mat-form-field >
+              <input
+              pattern="[^ @]*@[^ @]*"
+                type="email" id="email" name="email" ngModel value="email"
+                matInput
+                placeholder="Email"
+                required
+                #email="ngModel"
+                autocomplete="false"
+              >
+                <mat-error *ngIf="email.invalid">Email is required</mat-error>
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+            <mat-form-field [class.has-error]="password.touched && password.invalid">
+              <input
+                matInput
+                placeholder="Password"
+                [type]="hide ? 'text' : 'password'" id="password" name="password" value="password" ngModel
+                required
+                minlength="6"
+                autocomplete="false"
+                #password="ngModel">
+                  <i class="material-icons" style="cursor: pointer;" matSuffix (click)="hide = !hide" >{{hide ? 'visibility' : 'visibility_off'}}</i>
+                  <!-- <mat-icon matSuffix (click)="enes()">visibility</mat-icon>  -->
+                 <mat-error
+                  *ngIf="password.touched && password.errors?.required">
+                  Password is required
+                </mat-error>
+                 <mat-error
+                  *ngIf="password.errors && password.errors.minlength">
+                  Password must be of length 6
+                </mat-error>
+
+            </mat-form-field>
+            <mat-form-field [class.has-error]="repassword.touched && repassword.invalid" >
+                <input
+                matInput
+                appConfirmEqualValidator="password"
+                placeholder="Password"
+                [type]="hide2 ? 'text' : 'password'" id="repassword" name="repassword" ngModel
+                required
+                minlength="6"
+                #repassword="ngModel"
+                autocomplete="false"
+                >
+                 <i class="material-icons" style="cursor: pointer;" matSuffix (click)="hide2 = !hide2" >{{hide2 ? 'visibility' : 'visibility_off'}}</i>
+                <mat-error
+                  *ngIf="repassword.touched && repassword.errors?.required">
+                  Confirm Password is required
+                </mat-error>
+                <mat-error
+                  *ngIf="repassword.touched && repassword.errors?.notEqual && !repassword.errors?.required">
+                  Password and Confirm Password does not match
+                </mat-error>
+            </mat-form-field>
+            <button
+              [disabled]="!f.valid"
+              mat-raised-button
+              color="primary"
+              class="login-button">
+              Sign Up
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

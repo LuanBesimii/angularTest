@@ -1,0 +1,52 @@
+a{
+    color: #202059 !important;
+    font-weight: bold !important;
+    font-size: medium !important; 
+}
+.add:hover{
+    background-color: greenyellow !important;
+}
+.edit:hover{
+    background-color: grey !;
+}
+.navbar-collapse .dropdown-menu>li>a {
+    background-color: #BADA55 !important;
+    color: red !important;
+  }
+  ::ng-deep .mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: none !important;
+    /* width: 180px; */
+}
+::ng-deep .mat-form-field-infix {
+    width: auto !important;
+}
+::ng-deep  md-select.mat-form-field-infix{
+   width: none !important;
+}
+:host ::ng-deep this.enes2 div.mat-form-field-wrapper.mat-form-field-flex.mat-form-field-infix{
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: none !important;
+}
+.uniqueClassOnComponent .mat-form-field-infix{
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: none !important;
+}
+mat-form-field:last-child div {
+    width: 0% !important;
+ }
+    .formFieldWidth480 .mat-form-field-infix {
+        width: 1px !important;
+     }
+.enes2 .mat-form-field-wrapper .mat-form-field-flex /deep/ .mat-form-field-infix{
+    width: none !important;
+}

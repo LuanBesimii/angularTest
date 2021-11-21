@@ -1,0 +1,52 @@
+.input{
+        display: flex;
+        width: 50% !important;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 2px solid #d3d3d3 !important;
+        border-radius: 4px !important;
+        /* box-shadow: inset 0 1px 1px rgba(0,0,0,.075); */
+        /* transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; */
+        margin-left: 2em;
+}
+label{
+    font-family: monospace ;
+    font-size: 17px !important;
+    font-size: initial;
+    color: navy !important;
+}
+.label{
+    font-size: initial;
+    color: crimson !important;
+    font-weight: 700;
+    font-family: cursive;
+
+}
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border: 2px solid red !important;
+}
+/* ::ng-deep .swal2-header {
+    /* margin-top: 10%; */
+    /* padding-bottom: 3%;
+
+    font-size: 15px;
+} */
+::ng-deep .swal2-popup {
+    font-size: 15px !important;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

@@ -1,0 +1,57 @@
+<mat-toolbar color="primary" >
+    <mat-toolbar-row fxLayoutAlign="space-between center" >
+        <div fxLayout="row" >
+            <button mat-button>
+                <mat-icon>restaurant_menu</mat-icon>
+                <span>Recipe Book</span>
+            </button>
+           <div *ngIf="!deviceXs">
+            <div class="nav navbar-nav" *ngIf="authService.isAuthenticated()">
+                <button mat-button routerLinkActive="active" routerLink="/recipes"><a  style="color:white; font-size: medium; ">Recipes</a></button>
+                <button mat-button routerLinkActive="active" routerLink="/shopping-list"><a  style="color:white; font-size: medium; ">Ingredient List</a></button>
+            </div>
+
+            <ng-template [ngIf]="!authService.isAuthenticated()">
+                <button mat-button routerLink="/signup"><a  style=" color: white; padding-top: 10%; font-size: medium;">Register</a></button>
+                <button mat-button routerLink="/signin"><a  style=" color: white;font-size: medium; ">Login</a></button>
+            </ng-template>
+        </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="end end" >
+            <div class="nav navbar-nav" *ngIf="authService.isAuthenticated()">
+            <div class="enes" *ngIf="deviceXs"  fxLayoutAlign="end">
+                   <mat-form-field  class="this.enes2">
+                    <mat-select>
+                      <mat-option value="option1"   (click)="onLogout()" *ngIf="authService.isAuthenticated()" >LogOut</mat-option>
+                      <mat-option value="option2"  (click)="onSaveData()" >Save Data</mat-option>
+                      <mat-option value="option3"   (click)="onFetchData()">Fetch Data</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+
+                <div *ngIf="!deviceXs" fxLayoutAlign="space-between end">
+                    <mat-form-field>
+                        <mat-select>
+                            <mat-option value="option1"   (click)="onLogout()" *ngIf="authService.isAuthenticated()" >LogOut</mat-option>
+                            <mat-option value="option2" (click)="onSaveData()" >Save Data</mat-option>
+                            <mat-option value="option3"   (click)="onFetchData()">Fetch Data</mat-option>
+                          </mat-select>
+                      </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between end">
+        <div class="nav navbar-nav" *ngIf="authService.isAuthenticated()">
+            <button mat-button routerLinkActive="active" routerLink="/recipes"><a  style="color:white; font-size: medium; ">Recipes</a></button>
+            <button mat-button routerLinkActive="active" routerLink="/shopping-list"><a  style="color:white; font-size: medium; ">Ingredient List</a></button>
+        </div>
+        <ng-template [ngIf]="!authService.isAuthenticated()">
+            <button mat-button routerLink="/signup"><a  style="  color: white; font-size: medium;">Register</a></button>
+            <button mat-button routerLink="/signin"><a  style=" color: white;font-size: medium; ">Login</a></button>
+        </ng-template>
+        <div class="nav navbar-nav" *ngIf="authService.isAuthenticated()">
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
